@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Implantar | Troque a dentadura por dentes fixos</title>
-<meta name="description" content="Chega de dentadura que cai e machuca. Protocolo, implantes e dentaduras na Implantar Odontologia & Saúde Integrada. Fale pelo WhatsApp.">
+<meta name="description" content="Chega de dentadura que cai e machuca. Prótese protocolo: dentes fixos na Implantar, em Lorena/SP. Fale pelo WhatsApp.">
 <meta name="theme-color" content="#3A0910">
 <meta property="og:title" content="Implantar | Troque a dentadura por dentes fixos">
-<meta property="og:description" content="Protocolo, implantes e dentaduras. Volte a comer, falar e sorrir sem medo.">
+<meta property="og:description" content="Prótese protocolo: dentes fixos. Volte a comer, falar e sorrir sem medo.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/hero-protocolo.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 170'%3E%3Cpath fill='%23A8A0A1' d='M78,46 C66,18 14,12 9,52 C6,80 40,104 76,128 C44,102 16,80 18,54 C21,24 62,24 78,46 Z'/%3E%3Cpath fill='%236B1520' d='M82,47 C96,10 154,6 152,52 C150,86 116,108 84,130 C112,106 136,84 137,56 C138,26 100,22 82,47 Z'/%3E%3Cg fill='%23A8A0A1'%3E%3Crect x='63' y='134' width='34' height='5' rx='2.5'/%3E%3Crect x='66' y='142' width='28' height='5' rx='2.5'/%3E%3Crect x='70' y='150' width='20' height='5' rx='2.5'/%3E%3Crect x='74' y='158' width='12' height='5' rx='2.5'/%3E%3C/g%3E%3C/svg%3E">
@@ -51,8 +51,8 @@
   --wrap:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);font-size:20px;font-weight:500;line-height:1.6;color:var(--texto);background:var(--branco);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{-webkit-tap-highlight-color:transparent;max-width:100%;font-family:var(--sans);font-size:20px;font-weight:500;line-height:1.6;color:var(--texto);background:var(--branco);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img,video{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit}
@@ -142,9 +142,15 @@ section{position:relative}
 .strip li{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem}
 .strip svg{width:26px;height:26px;fill:#F1C3CA;flex:none}
 
+/* ---------- Marca d'água do logo (seções claras) ---------- */
+.wm{overflow:hidden}
+.wm::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.055;background:url("assets/img/marca-dagua.svg") no-repeat center 50%/min(1200px,94%) auto}
+.wm.wm-r::after{background-position:115% 55%;background-size:min(1300px,110%) auto}
+.wm.wm-l::after{background-position:-15% 45%;background-size:min(1300px,110%) auto}
+.wm > .wrap{position:relative;z-index:1}
+
 /* ---------- Depoimento em destaque ---------- */
 .testi{background:var(--branco);overflow:hidden}
-.testi::before{content:"\201C";position:absolute;right:4%;top:-40px;font-family:var(--serif);font-size:420px;line-height:1;color:var(--rose);pointer-events:none}
 .testi .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;position:relative}
 .vframe{position:relative;max-width:400px;margin:0 auto;width:100%}
 .vframe::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:linear-gradient(160deg,var(--vinho-3),var(--vinho-escuro));border-radius:28px;z-index:0}
@@ -200,22 +206,14 @@ section{position:relative}
 .dots button.on{width:30px;background:#F1C3CA}
 .disclaimer{text-align:center;font-size:.92rem;color:rgba(255,255,255,.72);margin-top:22px}
 
-/* ---------- Tratamentos ---------- */
-.trat{background:#fff}
-.t-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:22px;align-items:stretch}
-.tcard{border:1px solid var(--linha);border-radius:24px;padding:34px 30px;background:#fff;display:flex;flex-direction:column;gap:14px;position:relative;box-shadow:0 20px 50px -40px rgba(58,9,16,.6)}
-.tcard h3{font-size:1.85rem}
-.tcard p{color:var(--muted);font-size:1.15rem;line-height:1.5}
-.tcard ul{list-style:none;display:grid;gap:10px;margin-top:2px}
-.tcard li{display:flex;gap:10px;align-items:center;font-size:1.15rem;font-weight:700;color:var(--texto);line-height:1.35}
-.tcard li svg{width:24px;height:24px;flex:none;fill:var(--vinho)}
-.tcard.star{background:linear-gradient(165deg,#7A1726 0%,#4A0C15 70%,#33070D 100%);border-color:transparent;color:#fff;box-shadow:var(--sombra);transform:translateY(-10px)}
-.tcard.star h3{color:#fff}
-.tcard.star p{color:#fff}
-.tcard.star li{color:#fff}
-.tcard.star li svg{fill:#F1C3CA}
-.ribbon{position:absolute;top:-16px;left:30px;background:#fff;color:var(--vinho);font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.4)}
-.tcard .btn{margin-top:auto;width:100%;padding:18px 18px;font-size:1.08rem}
+/* ---------- Protocolo ---------- */
+.proto{background:#fff}
+.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1040px;margin:0 auto}
+.pcard{background:#fff;border:1px solid var(--linha);border-top:6px solid var(--vinho);border-radius:24px;padding:36px 28px 32px;text-align:center;box-shadow:0 24px 50px -38px rgba(58,9,16,.7)}
+.pico{width:84px;height:84px;border-radius:50%;background:linear-gradient(160deg,var(--vinho-3),var(--vinho));display:grid;place-items:center;margin:0 auto 18px;box-shadow:0 0 0 8px var(--rose)}
+.pico svg{width:42px;height:42px;fill:#fff}
+.pcard h3{font-family:var(--sans);font-size:1.5rem;font-weight:800;letter-spacing:0;margin-bottom:8px}
+.pcard p{font-size:1.18rem;color:var(--muted);line-height:1.45}
 
 /* ---------- Comparativo ---------- */
 .comp{background:var(--rose)}
@@ -268,15 +266,14 @@ section{position:relative}
 .doc blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-size:1rem;color:rgba(255,255,255,.8);margin-top:8px}
 
 /* ---------- Clínica ---------- */
-.clinic{background:#fff}
-.mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-bottom:28px}
-.mosaic figure{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px -36px rgba(58,9,16,.7);aspect-ratio:3/4}
-.mosaic figure:nth-child(even){transform:translateY(28px)}
-.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.mosaic figure:hover img{transform:scale(1.04)}
-.mosaic figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.95);color:var(--vinho);font-weight:800;font-size:.95rem;padding:8px 14px;border-radius:999px}
-
-.local{margin:48px auto 0;max-width:900px;display:flex;align-items:center;gap:20px;padding:22px 26px;border-radius:22px;background:var(--rose);border:1px solid var(--linha)}
+.clinic{background:#fff;padding-bottom:80px}
+.mosaic{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:0;width:100%}
+.mosaic figure{position:relative;overflow:hidden;aspect-ratio:1/1;margin:0}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.mosaic figure:hover img{transform:scale(1.05)}
+.mosaic figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(34,5,10,.55));pointer-events:none}
+.mosaic figcaption{position:absolute;z-index:1;left:20px;bottom:18px;color:#fff;font-weight:800;font-size:1.1rem;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.local{position:relative;z-index:1;margin:44px auto 0;max-width:900px;display:flex;align-items:center;gap:20px;padding:22px 26px;border-radius:22px;background:var(--rose);border:1px solid var(--linha)}
 .local-ico{width:58px;height:58px;border-radius:16px;background:var(--vinho);display:grid;place-items:center;flex:none}
 .local-ico svg{width:30px;height:30px;fill:#fff}
 .local-txt{flex:1;display:flex;flex-direction:column;gap:2px}
@@ -337,7 +334,7 @@ section{position:relative}
 .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
 .modal.open{display:flex}
 .modal-bg{position:absolute;inset:0;background:rgba(20,4,7,.75);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);animation:fade .25s}
-.modal-card{position:relative;width:100%;max-width:480px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 50px 100px -30px rgba(0,0,0,.8);animation:up .3s cubic-bezier(.2,.8,.2,1);max-height:calc(100vh - 40px);overflow-y:auto}
+.modal-card{position:relative;width:100%;max-width:480px;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 50px 100px -30px rgba(0,0,0,.8);animation:up .3s cubic-bezier(.2,.8,.2,1);max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow-y:auto}
 .modal-top{background:linear-gradient(150deg,#6B1520,#3A0910);color:#fff;padding:26px 28px 24px;position:relative}
 .modal-top img{height:28px;width:auto;margin-bottom:14px}
 .modal-top h3{color:#fff;font-size:1.9rem;line-height:1.2}
@@ -374,10 +371,10 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 @media (max-width:1020px){
   .hero .wrap,.testi .wrap,.doc .wrap,.final .wrap{grid-template-columns:1fr;gap:48px}
   .hero-visual{max-width:520px;margin:0 auto;width:100%}
-  .t-grid{grid-template-columns:1fr;max-width:580px;margin:0 auto}
-  .tcard.star{transform:none;margin-top:10px}
+  .p-grid{grid-template-columns:1fr;max-width:520px}
   .pain-grid{grid-template-columns:1fr 1fr}
   .track{grid-auto-columns:calc((100% - 24px)/2)}
+  .mosaic{grid-template-columns:1fr 1fr}
   .doc-photo{max-width:380px}
   footer .wrap{grid-template-columns:1fr 1fr}
 }
@@ -417,9 +414,9 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   .crow.chead .lbl{display:none}
   .chead > div{font-size:1.15rem;padding:16px 14px}
   .v-grid{grid-template-columns:1fr;gap:44px;max-width:400px}
-  .mosaic{grid-template-columns:1fr 1fr;gap:12px}
-  .mosaic figure:nth-child(even){transform:none}
-  .mosaic figcaption{font-size:.85rem;padding:6px 11px;left:10px;bottom:10px}
+  .mosaic{grid-template-columns:1fr}
+  .mosaic figcaption{left:18px;bottom:16px;font-size:1.05rem}
+  .clinic{padding-bottom:64px}
   .s-grid{grid-template-columns:1fr}
   .local{flex-direction:column;text-align:center;padding:24px 20px}
   .local-btn{width:100%}
@@ -428,11 +425,12 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   .form-card{padding:28px 22px}
   footer .wrap{grid-template-columns:1fr}
   .fab{display:none}
+  .wm::after,.wm.wm-r::after,.wm.wm-l::after{background-image:url("assets/img/marca-dagua-icone.svg");background-size:118% auto;background-position:50% 50%;opacity:.05}
   .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--linha);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .35s ease}
   .mbar.show{transform:none}
   .mbar .btn{width:100%;padding:18px 16px;font-size:1.15rem}
   .modal{align-items:flex-end;padding:0}
-  .modal-card{max-width:none;border-radius:24px 24px 0 0;max-height:94vh}
+  .modal-card{max-width:none;border-radius:24px 24px 0 0;max-height:94vh;max-height:94dvh;padding-bottom:env(safe-area-inset-bottom)}
   .modal-top h3{font-size:1.7rem}
   .vframe::before{inset:12px -10px -12px 10px}
   .doc-photo::after{inset:14px -12px -14px 12px}
@@ -455,6 +453,9 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-6 10.2V17c0 1.7 2.7 4 6 4s6-2.3 6-4v-3.8l-6 3.3-6-3.3Z"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Zm-1.2 15.2-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7Z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 1a8 8 0 0 0-8 8c0 5.6 6.6 12.9 7.3 13.7a1 1 0 0 0 1.4 0C13.4 21.9 20 14.6 20 9a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path d="M4.5 2H6v6.5h1V2h1.5v6.5h1V2H11v7a3 3 0 0 1-2.25 2.9V22h-2V11.9A3 3 0 0 1 4.5 9V2Zm13.5 0c1.7 0 3 2.5 3 6.5 0 2.3-.8 3.8-2 4.4V22h-2V2.2c.3-.1.6-.2 1-.2Z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4 2.5h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9.5L4 22v-4.5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Zm3.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.5 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.5 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.5 7.5a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2Zm7 0a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2ZM6.8 13.2h10.4a5.2 5.2 0 0 1-10.4 0Z"/></symbol>
   <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M15 18 9 12l6-6"/></symbol>
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
 </svg>
@@ -478,9 +479,9 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero-text">
-      <span class="chip"><i></i>Protocolo · Implantes · Dentaduras</span>
+      <span class="chip"><i></i>Prótese protocolo · Dentes fixos</span>
       <h1>Chega de dentadura que <em>cai e machuca.</em></h1>
-      <p class="lead">Troque por <strong>dentes fixos</strong>. Volte a comer, falar e sorrir sem medo.</p>
+      <p class="lead">Troque pela <strong>prótese protocolo</strong>: dentes fixos que não saem da boca.</p>
       <div class="hero-cta">
         <button class="btn btn-cta btn-xl btn-shine" data-lead="Hero - Botao principal" type="button">
           <svg><use href="#i-wa"/></svg>Quero dentes fixos
@@ -514,7 +515,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </div>
 
 <!-- ================= DEPOIMENTO EM DESTAQUE ================= -->
-<section class="testi sec" id="depoimento">
+<section class="testi sec wm wm-l" id="depoimento">
   <div class="wrap">
     <div class="vframe rv">
       <div class="vbox" data-video>
@@ -542,7 +543,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </section>
 
 <!-- ================= DOR ================= -->
-<section class="dor sec" id="voce-se-identifica">
+<section class="dor sec wm" id="voce-se-identifica">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Você se identifica?</span>
@@ -599,59 +600,34 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   </div>
 </section>
 
-<!-- ================= TRATAMENTOS ================= -->
-<section class="trat sec" id="tratamentos">
+<!-- ================= PROTOCOLO ================= -->
+<section class="proto sec wm wm-r" id="protocolo">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Tratamentos</span>
-      <h2>Dentes fixos. <em>Sorriso sem medo.</em></h2>
-      <p>Na avaliação, o Dr. Gustavo indica o melhor para você.</p>
+      <span class="eyebrow">A solução</span>
+      <h2>Prótese protocolo: <em>dentes fixos.</em></h2>
+      <p>Uma arcada completa de dentes, presa em implantes. Não sai da boca e não precisa de cola.</p>
     </div>
-    <div class="t-grid">
-      <article class="tcard star rv">
-        <span class="ribbon">Mais procurado</span>
-        <h3>Protocolo</h3>
-        <p>Dentes fixos no lugar da dentadura.</p>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Não sai da boca</li>
-          <li><svg><use href="#i-check"/></svg>Sem cola</li>
-          <li><svg><use href="#i-check"/></svg>Dorme com os dentes</li>
-        </ul>
-        <button class="btn btn-light" data-lead="Tratamento - Protocolo" type="button"><svg><use href="#i-wa"/></svg>Quero o protocolo</button>
-      </article>
-      <article class="tcard rv">
-        <h3>Implantes</h3>
-        <p>Para quem perdeu um ou poucos dentes.</p>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Parece dente natural</li>
-          <li><svg><use href="#i-check"/></svg>Fica firme</li>
-          <li><svg><use href="#i-check"/></svg>Não mexe nos outros dentes</li>
-        </ul>
-        <button class="btn btn-cta" data-lead="Tratamento - Implantes" type="button"><svg><use href="#i-wa"/></svg>Quero implantes</button>
-      </article>
-      <article class="tcard rv">
-        <h3>Dentaduras</h3>
-        <p>Feitas sob medida para você.</p>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Ajuste confortável</li>
-          <li><svg><use href="#i-check"/></svg>Aparência natural</li>
-          <li><svg><use href="#i-check"/></svg>Pode ser presa em implantes</li>
-        </ul>
-        <button class="btn btn-cta" data-lead="Tratamento - Dentaduras" type="button"><svg><use href="#i-wa"/></svg>Quero dentadura nova</button>
-      </article>
+    <div class="p-grid">
+      <div class="pcard rv"><div class="pico"><svg><use href="#i-food"/></svg></div><h3>Comer o que gosta</h3><p>Mastigação firme, sem nada sair do lugar.</p></div>
+      <div class="pcard rv"><div class="pico"><svg><use href="#i-chat"/></svg></div><h3>Falar sem medo</h3><p>Nada escorrega na hora de conversar.</p></div>
+      <div class="pcard rv"><div class="pico"><svg><use href="#i-smile"/></svg></div><h3>Sorrir de novo</h3><p>Dentes fixos com aparência natural.</p></div>
+    </div>
+    <div class="cta-row">
+      <button class="btn btn-cta btn-xl btn-shine" data-lead="Protocolo" type="button"><svg><use href="#i-wa"/></svg>Quero o protocolo</button>
     </div>
   </div>
 </section>
 
 <!-- ================= COMPARATIVO ================= -->
-<section class="comp sec" id="comparativo">
+<section class="comp sec wm wm-l" id="comparativo">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Compare</span>
       <h2>Dentadura <em>x</em> Protocolo</h2>
     </div>
-    <div class="ctable rv" role="table" aria-label="Comparativo entre dentadura e protocolo">
-      <div class="crow chead" role="row"><div class="lbl" role="columnheader"></div><div class="bad" role="columnheader">Dentadura</div><div class="good" role="columnheader">Protocolo</div></div>
+    <div class="ctable rv" role="table" aria-label="Comparativo entre dentadura e prótese protocolo">
+      <div class="crow chead" role="row"><div class="lbl" role="columnheader"></div><div class="bad" role="columnheader">Sua dentadura</div><div class="good" role="columnheader">Protocolo</div></div>
       <div class="crow" role="row"><div class="lbl" role="rowheader">Firmeza</div><div class="bad" role="cell"><svg><use href="#i-x"/></svg>Solta e cai</div><div class="good" role="cell"><svg><use href="#i-check"/></svg>Fixo, não sai</div></div>
       <div class="crow" role="row"><div class="lbl" role="rowheader">Cola</div><div class="bad" role="cell"><svg><use href="#i-x"/></svg>Precisa</div><div class="good" role="cell"><svg><use href="#i-check"/></svg>Não precisa</div></div>
       <div class="crow" role="row"><div class="lbl" role="rowheader">Na hora de dormir</div><div class="bad" role="cell"><svg><use href="#i-x"/></svg>Tira toda noite</div><div class="good" role="cell"><svg><use href="#i-check"/></svg>Dorme com os dentes</div></div>
@@ -665,7 +641,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </section>
 
 <!-- ================= VÍDEOS DE AUTORIDADE ================= -->
-<section class="auth sec" id="dr-explica">
+<section class="auth sec wm wm-r" id="dr-explica">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Ouça o especialista da clínica</span>
@@ -731,18 +707,20 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </section>
 
 <!-- ================= CLÍNICA ================= -->
-<section class="clinic sec" id="clinica">
+<section class="clinic sec wm" id="clinica">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">A clínica</span>
       <h2>Feita para você <em>se sentir em casa.</em></h2>
     </div>
-    <div class="mosaic">
-      <figure class="rv"><img src="assets/img/clinica-1.jpg" alt="Recepção da clínica Implantar" width="1125" height="1500" loading="lazy"><figcaption>Recepção</figcaption></figure>
-      <figure class="rv"><img src="assets/img/clinica-2.jpg" alt="Consultório da Implantar" width="975" height="1300" loading="lazy"><figcaption>Consultório</figcaption></figure>
-      <figure class="rv"><img src="assets/img/clinica-3.jpg" alt="Sala de atendimento da Implantar" width="975" height="1300" loading="lazy"><figcaption>Atendimento</figcaption></figure>
-      <figure class="rv"><img src="assets/img/clinica-4.jpg" alt="Consultório odontológico da Implantar" width="975" height="1300" loading="lazy" style="object-position:30% 50%"><figcaption>Estrutura</figcaption></figure>
-    </div>
+  </div>
+  <div class="mosaic">
+    <figure><img src="assets/img/clinica-1.jpg" alt="Recepção da clínica Implantar" width="1125" height="1500" loading="lazy"><figcaption>Recepção</figcaption></figure>
+    <figure><img src="assets/img/clinica-2.jpg" alt="Consultório da Implantar" width="975" height="1300" loading="lazy"><figcaption>Consultório</figcaption></figure>
+    <figure><img src="assets/img/clinica-3.jpg" alt="Sala de atendimento da Implantar" width="975" height="1300" loading="lazy"><figcaption>Atendimento</figcaption></figure>
+    <figure><img src="assets/img/clinica-4.jpg" alt="Consultório odontológico da Implantar" width="975" height="1300" loading="lazy" style="object-position:30% 50%"><figcaption>Estrutura</figcaption></figure>
+  </div>
+  <div class="wrap">
     <div class="local rv">
       <div class="local-ico"><svg><use href="#i-pin"/></svg></div>
       <div class="local-txt"><b>Rua Major de Oliveira Borges, 174</b><span>Centro · Lorena/SP · CEP 12600-020</span></div>
@@ -752,7 +730,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </section>
 
 <!-- ================= COMO FUNCIONA ================= -->
-<section class="steps sec" id="como-funciona">
+<section class="steps sec wm" id="como-funciona">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Como funciona</span>
@@ -767,14 +745,14 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="faq sec" id="duvidas">
+<section class="faq sec wm wm-l" id="duvidas">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Dúvidas</span>
       <h2>Perguntas <em>frequentes.</em></h2>
     </div>
     <div class="faq-list">
-      <details class="rv"><summary>Uso dentadura há anos. Ainda posso fazer?</summary><div class="ans">Na maioria dos casos, sim. A avaliação mostra o melhor caminho para você.</div></details>
+      <details class="rv"><summary>Uso dentadura há anos. Ainda posso fazer o protocolo?</summary><div class="ans">Na maioria dos casos, sim. A avaliação mostra o melhor caminho para você.</div></details>
       <details class="rv"><summary>Tenho mais de 60 anos. Posso fazer?</summary><div class="ans">A idade não é impedimento. O que importa é a sua saúde, que é avaliada na consulta.</div></details>
       <details class="rv"><summary>Dói?</summary><div class="ans">O procedimento é feito com anestesia. Depois, o incômodo costuma ser leve e controlado com remédio.</div></details>
       <details class="rv"><summary>Quanto tempo demora?</summary><div class="ans">Depende do caso. Em alguns casos, os dentes fixos provisórios são colocados em poucos dias.</div></details>
@@ -875,7 +853,7 @@ var CONFIG = {
   LP_NOME: "LP Implantar",
 
   // Mensagem que chega no WhatsApp da clínica (o nome é inserido automaticamente)
-  MENSAGEM: "Vim pelo site da Implantar e quero agendar uma avaliação para dentes fixos (protocolo / implantes)."
+  MENSAGEM: "Vim pelo site da Implantar e quero saber sobre a prótese protocolo (dentes fixos)."
 };
 
 /* ---------- Google Tag Manager (carrega só se o ID for preenchido) ---------- */
