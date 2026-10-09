@@ -1,0 +1,83 @@
+/* =====================================================================
+   APPS SCRIPT — PLANILHA DE LEADS DA LP IMPLANTAR
+   Cole TODO este código em: Planilha > Extensões > Apps Script
+   (apague o "function myFunction() {}" que vem por padrão)
+   Colunas: Data | Nome | WhatsApp | Origem | Campanha | Fonte | Termo | GCLID | Abrir conversa | Página
+   ===================================================================== */
+
+function doPost(e) {
+  try {
+    // Proteção: se rodar pelo botão "Executar", não dá erro
+    if (!e || !e.postData || !e.postData.contents) {
+      return saida({ status: 'erro', msg: 'Sem dados. Esta função é chamada pelo site, não pelo botão Executar.' });
+    }
+
+    var dados = JSON.parse(e.postData.contents);
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(['Data', 'Nome', 'WhatsApp', 'Origem', 'Campanha', 'Fonte', 'Termo', 'GCLID', 'Abrir conversa', 'Página']);
+    }
+
+    var whats = String(dados.whatsapp || '').replace(/\D/g, '');
+
+    sheet.appendRow([
+      new Date(),
+      dados.nome || '',
+      "'" + whats,                       // apóstrofo: mantém o número como texto
+      dados.origem || '',
+      dados.campanha || '',
+      dados.fonte || '',
+      dados.termo || '',
+      dados.gclid || '',
+      whats ? 'https://wa.me/55' + whats : '',
+      dados.pagina || ''
+    ]);
+
+    return saida({ status: 'ok' });
+  } catch (err) {
+    return saida({ status: 'erro', msg: String(err) });
+  }
+}
+
+function saida(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+/* ---------------------------------------------------------------------
+   OPCIONAL — deixa a planilha com o visual da marca (vinho e branco).
+   No Apps Script, escolha "formatarPlanilha" no menu ao lado de
+   "Executar" e clique em Executar. Pode rodar quantas vezes quiser.
+   --------------------------------------------------------------------- */
+function formatarPlanilha() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  var colunas = 10;
+  var cab = ['Data', 'Nome', 'WhatsApp', 'Origem', 'Campanha', 'Fonte', 'Termo', 'GCLID', 'Abrir conversa', 'Página'];
+  sheet.getRange(1, 1, 1, colunas).setValues([cab]);
+
+  var ultimaLinha = Math.max(sheet.getLastRow(), 300);
+
+  var header = sheet.getRange(1, 1, 1, colunas);
+  header.setBackground('#6B1520')
+        .setFontColor('#FFFFFF')
+        .setFontWeight('bold')
+        .setFontSize(11)
+        .setVerticalAlignment('middle');
+  sheet.setRowHeight(1, 36);
+  sheet.setFrozenRows(1);
+
+  var larguras = [150, 200, 140, 260, 160, 130, 140, 160, 230, 260];
+  for (var i = 0; i < larguras.length; i++) sheet.setColumnWidth(i + 1, larguras[i]);
+
+  sheet.getRange(2, 1, ultimaLinha - 1, 1).setNumberFormat('dd/MM/yyyy HH:mm');
+
+  for (var row = 2; row <= ultimaLinha; row++) {
+    sheet.getRange(row, 1, 1, colunas).setBackground(row % 2 === 0 ? '#F8EFF0' : '#FFFFFF');
+  }
+
+  sheet.getRange(1, 1, ultimaLinha, colunas)
+       .setBorder(true, true, true, true, true, true, '#E6D3D6', SpreadsheetApp.BorderStyle.SOLID);
+
+  SpreadsheetApp.flush();
+}
