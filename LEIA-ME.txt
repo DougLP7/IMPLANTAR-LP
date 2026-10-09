@@ -28,7 +28,7 @@ O QUE TEM NESTA PASTA
 
 
 3) CONFIGURAR O index.html (bloco CONFIG, perto do final do arquivo)
-   - WHATSAPP_NUMBER: 55 + DDD + número, só dígitos. Ex.: "5511999998888"
+   - WHATSAPP_NUMBER: já configurado com (12) 98889-1990
    - APPS_SCRIPT_URL: a URL /exec do passo 2
    - GTM_ID: quando o gestor de tráfego enviar, ex.: "GTM-ABC1234" (o GTM carrega sozinho)
 
@@ -44,7 +44,5 @@ O QUE TEM NESTA PASTA
 
 
 5) PONTOS PARA PREENCHER (procure por "EDITAR" no index.html)
-   - CRO do Dr. Gustavo (caixa "Registro profissional" + rodapé)
-   - Nome completo do doutor (se quiser usar além de "Dr. Gustavo")
-   - Currículo (4 linhas: formação, especializações, cursos, experiência)
-   - Endereço da clínica (rodapé)
+   - Currículo do Dr. Gustavo (4 linhas: formação, especializações, cursos, experiência)
+   - APPS_SCRIPT_URL e GTM_ID no bloco CONFIG (ver passos 2 e 3)
