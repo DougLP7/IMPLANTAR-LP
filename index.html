@@ -520,7 +520,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
       <img src="assets/img/logo-vinho.svg" alt="Implantar" width="190" height="36">
       <small>Odontologia &amp; Saúde Integrada</small>
     </a>
-    <button class="btn btn-cta" data-lead="Topo - Header" type="button">
+    <button class="btn btn-cta" data-lead="Cabeçalho" type="button">
       <svg><use href="#i-wa"/></svg><span>Agendar avaliação</span>
     </button>
   </div>
@@ -537,7 +537,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
       <h1>Chega de dentadura que <em>cai e machuca.</em></h1>
       <p class="lead">Troque pela <strong>prótese protocolo</strong>: dentes fixos que não saem da boca.</p>
       <div class="hero-cta">
-        <button class="btn btn-cta btn-xl btn-shine" data-lead="Hero - Botao principal" type="button">
+        <button class="btn btn-cta btn-xl btn-shine" data-lead="Topo · botão principal" type="button">
           <svg><use href="#i-wa"/></svg>Quero dentes fixos
         </button>
         <div class="hero-checks">
@@ -620,7 +620,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
       </div>
     </div>
     <div class="cta-row">
-      <button class="btn btn-cta btn-xl btn-shine" data-lead="Dor - Nao quero esperar" type="button"><svg><use href="#i-wa"/></svg>Não quero esperar mais</button>
+      <button class="btn btn-cta btn-xl btn-shine" data-lead="Dores · Não quero esperar" type="button"><svg><use href="#i-wa"/></svg>Não quero esperar mais</button>
       <span class="cta-note"><svg><use href="#i-lock"/></svg>Leva menos de 30 segundos</span>
     </div>
   </div>
@@ -733,7 +733,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
       </div>
     </div>
     <div class="cta-row">
-      <button class="btn btn-cta btn-xl btn-shine" data-lead="Videos do doutor" type="button"><svg><use href="#i-wa"/></svg>Falar com a equipe</button>
+      <button class="btn btn-cta btn-xl btn-shine" data-lead="Vídeos do doutor" type="button"><svg><use href="#i-wa"/></svg>Falar com a equipe</button>
     </div>
   </div>
 </section>
@@ -837,7 +837,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
     <div class="form-card">
       <h3>Fale com a Implantar</h3>
       <p>Preencha e fale com a gente no WhatsApp.</p>
-      <form class="lead-form" data-origem="Formulario final" novalidate>
+      <form class="lead-form" data-origem="Formulário final" novalidate>
         <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome"><span class="msg"></span></div>
         <div class="field"><label for="f-whats">Seu WhatsApp com DDD</label><input id="f-whats" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(00) 00000-0000" maxlength="16"><span class="msg"></span></div>
         <input class="hp" type="text" name="empresa" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -873,8 +873,8 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 </footer>
 
 <!-- Botão flutuante (desktop) e barra fixa (celular) -->
-<button class="fab" data-lead="Botao flutuante" type="button" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg>Agendar avaliação</button>
-<div class="mbar" id="mbar"><button class="btn btn-cta btn-shine" data-lead="Barra fixa celular" type="button"><svg><use href="#i-wa"/></svg>Quero dentes fixos</button></div>
+<button class="fab" data-lead="Botão flutuante" type="button" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg>Agendar avaliação</button>
+<div class="mbar" id="mbar"><button class="btn btn-cta btn-shine" data-lead="Barra fixa (celular)" type="button"><svg><use href="#i-wa"/></svg>Quero dentes fixos</button></div>
 
 <!-- ================= MODAL DE CADASTRO ================= -->
 <div class="modal" id="modal" aria-hidden="true">
@@ -1015,7 +1015,8 @@ window.dataLayer = window.dataLayer || [];
           body: JSON.stringify({
             nome: dados.nome,
             whatsapp: dados.whatsapp,
-            origem: origemCompleta,
+            origem: origem,
+            lp: CONFIG.LP_NOME,
             campanha: track.utm_campaign,
             fonte: [track.utm_source, track.utm_medium].filter(Boolean).join(' / '),
             termo: track.utm_term,

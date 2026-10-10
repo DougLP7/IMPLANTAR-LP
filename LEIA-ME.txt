@@ -19,12 +19,13 @@ O QUE TEM NESTA PASTA
 
 
 2) PLANILHA DE LEADS (Google Sheets + Apps Script)
-   a. Crie uma planilha nova, ex.: "Leads Implantar".
-   b. Extensões > Apps Script > apague o conteúdo > cole o código de apps-script-planilha.txt > salvar.
-   c. Implantar > Nova implantação > tipo "App da Web"
-      Executar como: Eu | Quem pode acessar: Qualquer pessoa > Implantar > autorizar.
-   d. Copie a URL que termina em /exec.
-   e. (Opcional) Rode a função formatarPlanilha para aplicar o visual vinho e branco.
+   a. Crie uma planilha nova e vazia no Google Sheets.
+   b. Extensões > Apps Script > apague o conteúdo > cole TODO o apps-script-planilha.txt > salvar.
+   c. Escolha a função "configurarPlanilha" e clique em Executar (autorize na primeira vez).
+      A planilha é montada sozinha: aba "Painel" (números e gráficos) e aba "Leads".
+   d. Implantar > Nova implantação > App da Web | Executar como: Eu | Acesso: Qualquer pessoa.
+   e. Copie a URL que termina em /exec e cole em CONFIG.APPS_SCRIPT_URL (ou mande para o Claude).
+   f. (Opcional) Rode "testarLead" para ver um lead de teste aparecer; depois apague a linha.
 
 
 3) CONFIGURAR O index.html (bloco CONFIG, perto do final do arquivo)
