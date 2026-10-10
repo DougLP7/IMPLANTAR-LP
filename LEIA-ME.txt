@@ -46,4 +46,4 @@ O QUE TEM NESTA PASTA
 
 5) PONTOS PARA PREENCHER (procure por "EDITAR" no index.html)
    - Currículo do Dr. Gustavo (4 linhas: formação, especializações, cursos, experiência)
-   - APPS_SCRIPT_URL e GTM_ID no bloco CONFIG (ver passos 2 e 3)
+   - GTM_ID no bloco CONFIG (planilha já ligada)
