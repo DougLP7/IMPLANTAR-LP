@@ -51,8 +51,9 @@
   --wrap:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
-body{-webkit-tap-highlight-color:transparent;max-width:100%;font-family:var(--sans);font-size:20px;font-weight:500;line-height:1.6;color:var(--texto);background:var(--branco);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent;max-width:100%;font-family:var(--sans);font-size:20px;font-weight:500;line-height:1.6;color:var(--texto);background:var(--branco);overflow-x:clip;-webkit-font-smoothing:antialiased}
+@supports not (overflow:clip){body{overflow-x:hidden}}
 img,video{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit}
@@ -167,11 +168,7 @@ section{position:relative}
 @keyframes blink{50%{opacity:.25}}
 .testi h2{font-size:clamp(2.6rem,5.4vw,4rem);margin:16px 0 16px}
 .testi h2 em{color:var(--vinho)}
-.testi .intro{font-size:1.3rem;color:var(--texto);margin-bottom:26px;line-height:1.5}
-.quotes{display:grid;gap:14px}
-.quote{background:var(--off);border:1px solid var(--linha);border-left:5px solid var(--vinho);border-radius:14px;padding:18px 22px;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--tinta);line-height:1.4}
-.stars{display:flex;gap:3px;margin-bottom:6px}
-.stars svg{width:20px;height:20px;fill:#B8892F}
+.testi .intro{font-size:1.3rem;color:var(--texto);margin-bottom:6px;line-height:1.5}
 .testi .cta-row{align-items:flex-start}
 
 /* ---------- Dor ---------- */
@@ -401,7 +398,6 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   .strip ul{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .strip li{font-size:1.02rem}
   .testi h2{font-size:2.6rem}
-  .quote{font-size:1.28rem}
   .pain-grid{grid-template-columns:1fr;gap:12px}
   .pain{padding:18px 18px}
   .pain p{font-size:1.15rem}
@@ -531,10 +527,6 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
       <span class="eyebrow">Quem fez, aprova</span>
       <h2><em>“Sorriso é tudo!”</em></h2>
       <p class="intro">Ela sofria com uma prótese mal feita. Veja como ela está hoje.</p>
-      <div class="quotes">
-        <div class="quote"><div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>“Estou falando bem e me alimentando bem.”</div>
-        <div class="quote">“A autoestima vai lá em cima!”</div>
-      </div>
       <div class="cta-row">
         <button class="btn btn-cta btn-xl btn-shine" data-lead="Depoimento" type="button"><svg><use href="#i-wa"/></svg>Quero sorrir assim</button>
       </div>
