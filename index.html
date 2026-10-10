@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/capa-protocolo.jpg">
+<script>document.documentElement.className+=" js"</script>
 
 <!--
   ============================================================
@@ -105,30 +106,53 @@ section{position:relative}
 .topbar .btn{padding:14px 22px;font-size:1rem;border-radius:14px}
 .topbar .btn svg{width:24px;height:24px}
 
-/* ---------- Hero ---------- */
-.hero{background:
-  radial-gradient(900px 520px at 85% 10%, rgba(163,40,59,.55), transparent 60%),
-  radial-gradient(700px 500px at 0% 100%, rgba(107,21,32,.6), transparent 60%),
-  linear-gradient(160deg,#4B0C16 0%, #2C060C 60%, #1D0407 100%);
-  color:#fff;padding:72px 0 96px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
-.chip{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:10px 18px;border:1px solid rgba(255,255,255,.32);border-radius:999px;font-size:.86rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#F7DDE1;background:rgba(255,255,255,.06)}
-.chip i{width:7px;height:7px;border-radius:50%;background:#F7DDE1;display:block;flex:none}
-.hero h1{color:#fff;font-size:clamp(2.7rem,6.2vw,4.7rem);margin:24px 0 22px}
-.hero h1 em{color:var(--claro);position:relative}
-.hero .lead{font-size:1.4rem;line-height:1.5;color:#fff;max-width:540px;font-weight:500}
-.hero .lead strong{color:var(--claro);font-weight:800}
-.hero-cta{margin-top:34px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-.hero-checks{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:1.08rem;color:#fff;font-weight:600}
+/* ---------- Hero (branco que desvanece para o vinho + colagem) ---------- */
+.hero{position:relative;background:#fff;color:var(--texto);padding:64px 0 84px;overflow:hidden;isolation:isolate}
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(900px 600px at 92% 30%, rgba(163,40,59,.55), transparent 60%),
+  linear-gradient(100deg,#FFFFFF 0%,#FFFAFA 36%,#F6E1E4 47%,#C24A5C 60%,#86192A 76%,#4A0C15 92%,#33070D 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:58px 58px;
+  -webkit-mask-image:linear-gradient(100deg,transparent 46%,#000 66%);mask-image:linear-gradient(100deg,transparent 46%,#000 66%)}
+.hero-deco{position:absolute;z-index:-1;left:-170px;top:50%;width:620px;height:660px;transform:translateY(-50%);background:url("assets/img/marca-dagua-icone.svg") no-repeat center/contain;opacity:.07;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:.98fr 1.02fr;gap:48px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:10px 18px;border:1.5px solid rgba(107,21,32,.28);border-radius:999px;font-size:.86rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--vinho);background:rgba(107,21,32,.05)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--vinho-3);display:block;flex:none}
+.hero h1{color:var(--tinta);font-size:clamp(2.7rem,6vw,4.6rem);margin:24px 0 22px}
+.hero h1 em{color:var(--vinho)}
+.hero .lead{font-size:1.4rem;line-height:1.5;color:var(--texto);max-width:540px;font-weight:500}
+.hero .lead strong{color:var(--vinho);font-weight:800}
+.hero-cta{margin-top:34px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.hero-checks{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:1.08rem;color:var(--texto);font-weight:700}
 .hero-checks span{display:inline-flex;align-items:center;gap:9px}
-.hero-checks svg{width:22px;height:22px;fill:#F1B9C1}
-.hero-visual{position:relative;padding-bottom:30px;max-width:480px;width:100%;justify-self:end}
-.ba-hero{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.85);border:2px solid rgba(255,255,255,.22)}
-.ba-hero img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.hero-visual::before{content:"";position:absolute;inset:-14px 14px 44px -14px;border:1.5px solid rgba(241,201,207,.45);border-radius:30px;pointer-events:none}
-.hero-caption{position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;background:#fff;color:var(--vinho);border-radius:999px;padding:14px 24px;font-weight:800;font-size:1.05rem;box-shadow:0 20px 44px -18px rgba(0,0,0,.7);display:flex;align-items:center;gap:10px}
-.hero-caption svg{width:24px;height:24px;fill:var(--vinho)}
+.hero-checks svg{width:22px;height:22px;fill:var(--vinho)}
+
+/* Colagem de fotos sobrepostas */
+.hero-visual{position:relative;width:100%;max-width:600px;justify-self:end}
+.collage{position:relative;width:100%;aspect-ratio:100/108}
+.collage .cc{position:absolute;margin:0;border-radius:22px;overflow:hidden;border:4px solid #fff;background:#2b070d;box-shadow:0 30px 60px -24px rgba(25,3,7,.75)}
+.cc img{width:100%;height:100%;object-fit:cover;display:block}
+.cc-main{left:7%;top:0;width:50%;aspect-ratio:4/5;z-index:3}
+.cc-dr{right:0;top:8%;width:39%;aspect-ratio:3/4;z-index:2}
+.cc-ba{right:5%;bottom:0;width:45%;aspect-ratio:1/1;z-index:4}
+.cc-clin{left:0;bottom:4%;width:36%;aspect-ratio:3/4;z-index:2}
+.cc-clin img{object-position:40% 50%}
+.collage .cc .tag{font-size:.7rem;padding:6px 11px;top:10px}
+.collage .cc .t-antes{left:10px}
+.collage .cc .t-depois{left:calc(50% + 10px)}
+.collage .cc.stack .t-depois{left:10px;top:calc(50% + 10px)}
+.collage .cc-ba .tag{top:auto;bottom:10px}
+.cc figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.95);color:var(--vinho);font-weight:800;font-size:.78rem;padding:6px 11px;border-radius:999px}
+.seal{position:absolute;z-index:5;left:54%;top:56%;width:22%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 20px 40px -14px rgba(25,3,7,.7),inset 0 0 0 1.5px rgba(107,21,32,.25);display:grid;place-items:center}
+.seal svg.seal-text{position:absolute;inset:0;width:100%;height:100%;animation:girar 26s linear infinite}
+.seal svg.seal-text text{font-family:var(--sans);font-weight:800;font-size:13px;fill:var(--vinho);text-transform:uppercase}
+.seal img{width:46%;height:auto}
+@keyframes girar{to{transform:rotate(360deg)}}
+/* entrada da colagem */
+.js .cc,.js .seal{opacity:0;animation:ccIn 1.1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:var(--d,0s)}
+.js .seal{animation-name:sealIn}
+@keyframes ccIn{from{opacity:0;transform:translateY(34px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes sealIn{from{opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-40deg)}to{opacity:1;transform:translate(-50%,-50%)}}
 
 /* Etiquetas Antes / Depois */
 .ba{position:relative}
@@ -197,6 +221,8 @@ section{position:relative}
 .car-nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:8px}
 .car-btn{width:60px;height:60px;border-radius:50%;border:2px solid rgba(255,255,255,.4);display:grid;place-items:center;color:#fff;transition:background .2s}
 .car-btn:hover{background:rgba(255,255,255,.1)}
+.car-btn:disabled{opacity:.3;cursor:default;background:none}
+.sem-nav .car-nav{display:none}
 .car-btn svg{width:26px;height:26px;stroke:currentColor;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .dots{display:flex;gap:8px}
 .dots button{width:11px;height:11px;border-radius:999px;background:rgba(255,255,255,.35);transition:all .25s}
@@ -370,14 +396,22 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 .mbar{display:none}
 
 /* ---------- Animações de entrada ---------- */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn-shine::after,.vplay .pbtn,.fab::before{animation:none}}
+.js [data-anim]{opacity:0;transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js [data-anim="up"]{transform:translateY(46px)}
+.js [data-anim="left"]{transform:translateX(-60px)}
+.js [data-anim="right"]{transform:translateX(60px)}
+.js [data-anim="zoom"]{transform:scale(.9)}
+.js [data-anim].in{opacity:1;transform:none}
+@media (max-width:760px){.js [data-anim="left"],.js [data-anim="right"]{transform:translateY(40px)}}
+@media (prefers-reduced-motion:reduce){.js [data-anim]{opacity:1;transform:none;transition:none}.js .cc,.js .seal{animation:none;opacity:1}.seal svg.seal-text,.btn-shine::after,.vplay .pbtn,.fab::before{animation:none}}
 
 /* ---------- Responsivo ---------- */
 @media (max-width:1020px){
   .hero .wrap,.testi .wrap,.doc .wrap,.final .wrap{grid-template-columns:1fr;gap:48px}
-  .hero-visual{max-width:460px;margin:0 auto;width:100%;justify-self:center}
+  .hero-visual{max-width:560px;margin:0 auto;justify-self:center}
+  .hero::after{background:radial-gradient(700px 500px at 80% 90%, rgba(163,40,59,.5), transparent 60%),linear-gradient(180deg,#FFFFFF 0%,#FFFAFA 44%,#F6E1E4 52%,#C24A5C 63%,#86192A 78%,#3A0910 100%)}
+  .hero::before{-webkit-mask-image:linear-gradient(180deg,transparent 52%,#000 68%);mask-image:linear-gradient(180deg,transparent 52%,#000 68%)}
+  .hero-deco{left:auto;right:-160px;top:-60px;transform:none;width:420px;height:440px}
   .p-grid{grid-template-columns:1fr;max-width:520px}
   .pain-grid{grid-template-columns:1fr 1fr}
   .track{grid-auto-columns:calc((100% - 24px)/2)}
@@ -403,8 +437,16 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   .hero-cta .btn{width:100%}
   .chip{font-size:.74rem;letter-spacing:.08em;padding:9px 14px;gap:8px}
   .btn-xl{padding:22px 20px;font-size:1.22rem}
-  .hero-caption{font-size:.95rem;padding:12px 18px}
-  .hero-visual::before{inset:-10px 10px 40px -10px}
+  .cc{border-width:3px;border-radius:16px}
+  .collage .cc .tag{font-size:.6rem;padding:4px 8px;top:7px;letter-spacing:.08em}
+  .collage .cc .t-antes{left:7px}
+  .collage .cc .t-depois{left:calc(50% + 7px)}
+  .collage .cc.stack .t-depois{left:7px;top:calc(50% + 7px)}
+  .collage .cc-ba .tag{top:auto;bottom:7px}
+  .cc figcaption{font-size:.66rem;padding:4px 8px;left:7px;bottom:7px}
+  .cc-main{width:54%;left:4%}
+  .seal{width:25%}
+  .seal svg.seal-text text{font-size:14px}
   .strip ul{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .strip li{font-size:1.02rem}
   .testi h2{font-size:2.6rem}
@@ -488,6 +530,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="hero">
+  <div class="hero-deco" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-text">
       <span class="chip"><i></i>Prótese protocolo · Dentes fixos</span>
@@ -504,12 +547,17 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
         </div>
       </div>
     </div>
-    <div class="hero-visual rv">
-      <div class="ba stack ba-hero">
-        <img src="assets/img/capa-protocolo.jpg" alt="Antes e depois: sorriso com poucos dentes e depois com dentes fixos" width="1080" height="1350" fetchpriority="high">
-        <span class="tag t-antes">Antes</span><span class="tag t-depois">Depois</span>
+    <div class="hero-visual">
+      <div class="collage">
+        <figure class="cc cc-clin" style="--d:.15s"><img src="assets/img/clinica-1.jpg" alt="Recepção da clínica Implantar em Lorena" width="1125" height="1500"><figcaption>Nossa clínica</figcaption></figure>
+        <figure class="cc cc-dr" style="--d:.3s"><img src="assets/img/hero-dr-paciente.jpg" alt="Dr. Gustavo com paciente na recepção da Implantar" width="780" height="1040"><figcaption>Dr. Gustavo</figcaption></figure>
+        <figure class="cc cc-main ba stack" style="--d:0s"><img src="assets/img/capa-protocolo.jpg" alt="Antes e depois: sorriso com poucos dentes e depois com dentes fixos" width="1080" height="1350" fetchpriority="high"><span class="tag t-antes">Antes</span><span class="tag t-depois">Depois</span></figure>
+        <figure class="cc cc-ba ba" style="--d:.45s"><img src="assets/img/hero-ba-2.jpg" alt="Antes e depois: paciente com dentes fixos de protocolo" width="900" height="900"><span class="tag t-antes">Antes</span><span class="tag t-depois">Depois</span></figure>
+        <div class="seal" style="--d:.7s" aria-hidden="true">
+          <svg class="seal-text" viewBox="0 0 200 200"><defs><path id="seal-c" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#seal-c" textLength="458" lengthAdjust="spacing">Implantar • Odontologia &amp; Saúde Integrada •</textPath></text></svg>
+          <img src="assets/img/marca-dagua-icone.svg" alt="">
+        </div>
       </div>
-      <div class="hero-caption"><svg><use href="#i-tooth"/></svg>Protocolo · Paciente real</div>
     </div>
   </div>
 </section>
@@ -528,7 +576,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= DEPOIMENTO EM DESTAQUE ================= -->
 <section class="testi sec wm wm-l" id="depoimento">
   <div class="wrap">
-    <div class="vframe rv">
+    <div class="vframe">
       <div class="vbox" data-video>
         <span class="vlabel"><i></i>Depoimento real</span>
         <video src="assets/video/depoimento.mp4" poster="assets/img/poster-depoimento.jpg" preload="none" playsinline></video>
@@ -552,19 +600,19 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= DOR ================= -->
 <section class="dor sec wm" id="voce-se-identifica">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">Você se identifica?</span>
       <h2>Dentadura solta é <em>viver sem liberdade.</em></h2>
     </div>
     <div class="pain-grid">
-      <div class="pain rv"><div class="x"><svg><use href="#i-x"/></svg></div><p>A dentadura cai na hora de comer ou falar</p></div>
-      <div class="pain rv"><div class="x"><svg><use href="#i-x"/></svg></div><p>Você deixa de comer o que gosta</p></div>
-      <div class="pain rv"><div class="x"><svg><use href="#i-x"/></svg></div><p>A gengiva vive machucada</p></div>
-      <div class="pain rv"><div class="x"><svg><use href="#i-x"/></svg></div><p>Gasta com cola todo mês</p></div>
-      <div class="pain rv"><div class="x"><svg><use href="#i-x"/></svg></div><p>Precisa tirar os dentes para dormir</p></div>
-      <div class="pain rv"><div class="x"><svg><use href="#i-x"/></svg></div><p>Tem vergonha de sorrir</p></div>
+      <div class="pain"><div class="x"><svg><use href="#i-x"/></svg></div><p>A dentadura cai na hora de comer ou falar</p></div>
+      <div class="pain"><div class="x"><svg><use href="#i-x"/></svg></div><p>Você deixa de comer o que gosta</p></div>
+      <div class="pain"><div class="x"><svg><use href="#i-x"/></svg></div><p>A gengiva vive machucada</p></div>
+      <div class="pain"><div class="x"><svg><use href="#i-x"/></svg></div><p>Gasta com cola todo mês</p></div>
+      <div class="pain"><div class="x"><svg><use href="#i-x"/></svg></div><p>Precisa tirar os dentes para dormir</p></div>
+      <div class="pain"><div class="x"><svg><use href="#i-x"/></svg></div><p>Tem vergonha de sorrir</p></div>
     </div>
-    <div class="truth rv">
+    <div class="truth">
       <div class="big">!</div>
       <div>
         <h3>Esperar só piora.</h3>
@@ -581,7 +629,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= ANTES E DEPOIS ================= -->
 <section class="results sec dark" id="antes-e-depois">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">Antes e depois</span>
       <h2>Pacientes reais. <em>Sorrisos de verdade.</em></h2>
       <p>Arraste para o lado para ver mais.</p>
@@ -611,15 +659,15 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= PROTOCOLO ================= -->
 <section class="proto sec wm wm-r" id="protocolo">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">A solução</span>
       <h2>Prótese protocolo: <em>dentes fixos.</em></h2>
       <p>Uma arcada completa de dentes, presa em implantes. Não sai da boca e não precisa de cola.</p>
     </div>
     <div class="p-grid">
-      <div class="pcard rv"><div class="pico"><svg><use href="#i-food"/></svg></div><h3>Comer o que gosta</h3><p>Mastigação firme, sem nada sair do lugar.</p></div>
-      <div class="pcard rv"><div class="pico"><svg><use href="#i-chat"/></svg></div><h3>Falar sem medo</h3><p>Nada escorrega na hora de conversar.</p></div>
-      <div class="pcard rv"><div class="pico"><svg><use href="#i-smile"/></svg></div><h3>Sorrir de novo</h3><p>Dentes fixos com aparência natural.</p></div>
+      <div class="pcard"><div class="pico"><svg><use href="#i-food"/></svg></div><h3>Comer o que gosta</h3><p>Mastigação firme, sem nada sair do lugar.</p></div>
+      <div class="pcard"><div class="pico"><svg><use href="#i-chat"/></svg></div><h3>Falar sem medo</h3><p>Nada escorrega na hora de conversar.</p></div>
+      <div class="pcard"><div class="pico"><svg><use href="#i-smile"/></svg></div><h3>Sorrir de novo</h3><p>Dentes fixos com aparência natural.</p></div>
     </div>
     <div class="cta-row">
       <button class="btn btn-cta btn-xl btn-shine" data-lead="Protocolo" type="button"><svg><use href="#i-wa"/></svg>Quero o protocolo</button>
@@ -630,11 +678,11 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= COMPARATIVO ================= -->
 <section class="comp sec wm wm-l" id="comparativo">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">Compare</span>
       <h2>Prótese protocolo <em>x</em> Dentadura</h2>
     </div>
-    <div class="vs rv" role="table" aria-label="Comparativo entre prótese protocolo e dentadura">
+    <div class="vs" role="table" aria-label="Comparativo entre prótese protocolo e dentadura">
       <div class="vs-row vs-img" role="row">
         <div class="vs-c good" role="cell"><picture><source srcset="assets/img/comp-protocolo-hd.webp" type="image/webp"><img src="assets/img/comp-protocolo-hd.png" alt="Prótese protocolo fixada sobre implantes" width="592" height="578" loading="lazy"></picture></div>
         <div class="vs-c bad" role="cell"><picture><source srcset="assets/img/comp-dentadura-hd.webp" type="image/webp"><img src="assets/img/comp-dentadura-hd.png" alt="Dentadura comum, removível" width="644" height="512" loading="lazy"></picture></div>
@@ -659,13 +707,13 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= VÍDEOS DE AUTORIDADE ================= -->
 <section class="auth sec wm wm-r" id="dr-explica">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">Ouça o especialista da clínica</span>
       <h2>O Dr. Gustavo <em>explica.</em></h2>
       <p>Aperte o play.</p>
     </div>
     <div class="v-grid">
-      <div class="vcard rv">
+      <div class="vcard">
         <div class="vframe">
           <div class="vbox" data-video>
             <video src="assets/video/dr-gustavo-1.mp4" poster="assets/img/poster-dr-1.jpg" preload="none" playsinline></video>
@@ -674,7 +722,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
         </div>
         <h3>“Prótese solta é <em>viver sem liberdade.</em>”</h3>
       </div>
-      <div class="vcard rv">
+      <div class="vcard">
         <div class="vframe">
           <div class="vbox" data-video>
             <video src="assets/video/dr-gustavo-2.mp4" poster="assets/img/poster-dr-2.jpg" preload="none" playsinline></video>
@@ -693,7 +741,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= SOBRE O DOUTOR ================= -->
 <section class="doc sec dark" id="dr-gustavo">
   <div class="wrap">
-    <div class="doc-photo rv">
+    <div class="doc-photo">
       <img src="assets/img/dr-gustavo.jpg" alt="Dr. Gustavo Henrique Santos Pinto, cirurgião-dentista da Implantar" width="825" height="1100" loading="lazy">
     </div>
     <div class="doc-text">
@@ -725,19 +773,19 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= CLÍNICA ================= -->
 <section class="clinic sec wm" id="clinica">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">A clínica</span>
       <h2>Feita para você <em>se sentir em casa.</em></h2>
     </div>
   </div>
   <div class="mosaic">
-    <figure><img src="assets/img/clinica-1.jpg" alt="Recepção da clínica Implantar" width="1125" height="1500" loading="lazy"><figcaption>Recepção</figcaption></figure>
+    <figure><img src="assets/img/clinica-logo.jpg" alt="Dr. Gustavo na clínica Implantar" width="1080" height="1050" loading="lazy"><figcaption>Implantar</figcaption></figure>
     <figure><img src="assets/img/clinica-2.jpg" alt="Consultório da Implantar" width="975" height="1300" loading="lazy"><figcaption>Consultório</figcaption></figure>
     <figure><img src="assets/img/clinica-3.jpg" alt="Sala de atendimento da Implantar" width="975" height="1300" loading="lazy"><figcaption>Atendimento</figcaption></figure>
     <figure><img src="assets/img/clinica-4.jpg" alt="Consultório odontológico da Implantar" width="975" height="1300" loading="lazy" style="object-position:30% 50%"><figcaption>Estrutura</figcaption></figure>
   </div>
   <div class="wrap">
-    <div class="local rv">
+    <div class="local">
       <div class="local-ico"><svg><use href="#i-pin"/></svg></div>
       <div class="local-txt"><b>Rua Major de Oliveira Borges, 174</b><span>Centro · Lorena/SP · CEP 12600-020</span></div>
       <a class="btn btn-light local-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Major+de+Oliveira+Borges,+174,+Centro,+Lorena+-+SP,+12600-020" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Ver no Google Maps</a>
@@ -748,14 +796,14 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= COMO FUNCIONA ================= -->
 <section class="steps sec wm" id="como-funciona">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">Como funciona</span>
       <h2>Simples, em <em>3 passos.</em></h2>
     </div>
     <div class="s-grid">
-      <div class="step rv"><div class="n">1</div><h3>Toque no botão</h3><p>Deixe seu nome e WhatsApp.</p></div>
-      <div class="step rv"><div class="n">2</div><h3>Fale com a equipe</h3><p>Agende sua avaliação.</p></div>
-      <div class="step rv"><div class="n">3</div><h3>Faça a avaliação</h3><p>O Dr. Gustavo mostra o melhor caminho.</p></div>
+      <div class="step"><div class="n">1</div><h3>Toque no botão</h3><p>Deixe seu nome e WhatsApp.</p></div>
+      <div class="step"><div class="n">2</div><h3>Fale com a equipe</h3><p>Agende sua avaliação.</p></div>
+      <div class="step"><div class="n">3</div><h3>Faça a avaliação</h3><p>O Dr. Gustavo mostra o melhor caminho.</p></div>
     </div>
   </div>
 </section>
@@ -763,17 +811,17 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 <!-- ================= FAQ ================= -->
 <section class="faq sec wm wm-l" id="duvidas">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <span class="eyebrow">Dúvidas</span>
       <h2>Perguntas <em>frequentes.</em></h2>
     </div>
     <div class="faq-list">
-      <details class="rv"><summary>Uso dentadura há anos. Ainda posso fazer o protocolo?</summary><div class="ans">Na maioria dos casos, sim. A avaliação mostra o melhor caminho para você.</div></details>
-      <details class="rv"><summary>Tenho mais de 60 anos. Posso fazer?</summary><div class="ans">A idade não é impedimento. O que importa é a sua saúde, que é avaliada na consulta.</div></details>
-      <details class="rv"><summary>Dói?</summary><div class="ans">O procedimento é feito com anestesia. Depois, o incômodo costuma ser leve e controlado com remédio.</div></details>
-      <details class="rv"><summary>Quanto tempo demora?</summary><div class="ans">Depende do caso. Em alguns casos, os dentes fixos provisórios são colocados em poucos dias.</div></details>
-      <details class="rv"><summary>Quanto custa?</summary><div class="ans">Depende do seu caso. O valor é passado na avaliação, com tudo explicado.</div></details>
-      <details class="rv"><summary>Como eu agendo?</summary><div class="ans">Toque em qualquer botão, deixe seu nome e WhatsApp e a equipe fala com você.</div></details>
+      <details ><summary>Uso dentadura há anos. Ainda posso fazer o protocolo?</summary><div class="ans">Na maioria dos casos, sim. A avaliação mostra o melhor caminho para você.</div></details>
+      <details ><summary>Tenho mais de 60 anos. Posso fazer?</summary><div class="ans">A idade não é impedimento. O que importa é a sua saúde, que é avaliada na consulta.</div></details>
+      <details ><summary>Dói?</summary><div class="ans">O procedimento é feito com anestesia. Depois, o incômodo costuma ser leve e controlado com remédio.</div></details>
+      <details ><summary>Quanto tempo demora?</summary><div class="ans">Depende do caso. Em alguns casos, os dentes fixos provisórios são colocados em poucos dias.</div></details>
+      <details ><summary>Quanto custa?</summary><div class="ans">Depende do seu caso. O valor é passado na avaliação, com tudo explicado.</div></details>
+      <details ><summary>Como eu agendo?</summary><div class="ans">Toque em qualquer botão, deixe seu nome e WhatsApp e a equipe fala com você.</div></details>
     </div>
   </div>
 </section>
@@ -786,7 +834,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
       <h2>Pare de esconder o sorriso. <em>Fale com a gente hoje.</em></h2>
       <p class="big">Atendimento rápido pelo WhatsApp.</p>
     </div>
-    <div class="form-card rv">
+    <div class="form-card">
       <h3>Fale com a Implantar</h3>
       <p>Preencha e fale com a gente no WhatsApp.</p>
       <form class="lead-form" data-origem="Formulario final" novalidate>
@@ -1058,33 +1106,124 @@ window.dataLayer = window.dataLayer || [];
     v.addEventListener('ended', function(){ box.classList.remove('playing'); });
   });
 
-  /* ---------- Carrossel antes/depois ---------- */
+  /* ---------- Carrossel antes/depois (posições reais, sem buracos) ---------- */
   document.querySelectorAll('[data-carousel]').forEach(function(c){
-    var track = c.querySelector('.track'), cards = track.children, dots = c.querySelector('.dots');
-    for(var i=0;i<cards.length;i++){ dots.appendChild(document.createElement('button')); }
-    var dotBtns = dots.children;
-    function passo(){ return cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16); }
-    function atual(){ return Math.round(track.scrollLeft / passo()); }
-    function marcar(){ var a = atual(); for(var i=0;i<dotBtns.length;i++) dotBtns[i].classList.toggle('on', i === a); }
-    c.querySelector('[data-prev]').addEventListener('click', function(){ track.scrollBy({left:-passo()}); });
-    c.querySelector('[data-next]').addEventListener('click', function(){
-      var max = track.scrollWidth - track.clientWidth - 4;
-      if(track.scrollLeft >= max) track.scrollTo({left:0}); else track.scrollBy({left:passo()});
-    });
-    track.addEventListener('scroll', function(){ window.requestAnimationFrame(marcar); }, {passive:true});
-    marcar();
+    var track = c.querySelector('.track'), cards = [].slice.call(track.children);
+    var dots = c.querySelector('.dots'), prev = c.querySelector('[data-prev]'), next = c.querySelector('[data-next]');
+    var pos = [], idx = 0;
+    function calcular(){
+      var max = track.scrollWidth - track.clientWidth;
+      var base = cards[0].offsetLeft;
+      pos = [];
+      cards.forEach(function(card){
+        var p = Math.min(card.offsetLeft - base, max);
+        if(!pos.length || p - pos[pos.length-1] > 8) pos.push(p);
+      });
+      if(max > 0 && max - pos[pos.length-1] > 8) pos.push(max);
+      dots.innerHTML = '';
+      pos.forEach(function(p, i){
+        var d = document.createElement('button');
+        d.type = 'button'; d.setAttribute('aria-label', 'Ir para o caso ' + (i+1));
+        d.addEventListener('click', function(){ ir(i); });
+        dots.appendChild(d);
+      });
+      c.classList.toggle('sem-nav', pos.length < 2);
+      marcar();
+    }
+    function atual(){
+      var x = track.scrollLeft, best = 0;
+      for(var i=1;i<pos.length;i++){ if(Math.abs(pos[i]-x) < Math.abs(pos[best]-x)) best = i; }
+      return best;
+    }
+    function marcar(){
+      idx = atual();
+      [].forEach.call(dots.children, function(d, i){ d.classList.toggle('on', i === idx); });
+      prev.disabled = idx <= 0;
+      next.disabled = idx >= pos.length - 1;
+    }
+    function ir(i){
+      i = Math.max(0, Math.min(pos.length - 1, i));
+      track.scrollTo({left: pos[i], behavior: 'smooth'});
+      idx = i;
+      [].forEach.call(dots.children, function(d, k){ d.classList.toggle('on', k === i); });
+      prev.disabled = i <= 0; next.disabled = i >= pos.length - 1;
+    }
+    prev.addEventListener('click', function(){ ir(atual() - 1); });
+    next.addEventListener('click', function(){ ir(atual() + 1); });
+    var raf = 0;
+    track.addEventListener('scroll', function(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(marcar); }, {passive:true});
+    var rt = 0;
+    window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(calcular, 150); });
+    window.addEventListener('load', calcular);
+    calcular();
   });
 
   /* ---------- Barra fixa no celular (aparece depois do topo) ---------- */
   var mbar = document.getElementById('mbar'), hero = document.getElementById('hero');
+
+  /* ---------- Animações de entrada ao rolar a página ---------- */
+  var grupos = [
+    ['.hero-text', '> *', 'up', .12],
+    ['.sec-head', '> *', 'up', .12],
+    ['.strip ul', '> li', 'up', .08],
+    ['.testi .wrap', '> .vframe', 'left', 0],
+    ['.testi .text', '> *', 'right', .12],
+    ['.pain-grid', '> .pain', 'up', .08],
+    ['.dor', '.truth', 'zoom', 0],
+    ['#antes-e-depois', '.carousel', 'up', 0],
+    ['.p-grid', '> .pcard', 'up', .14],
+    ['.comp', '.vs', 'up', 0],
+    ['.v-grid', '> .vcard', 'up', .16],
+    ['.doc .wrap', '> .doc-photo', 'left', 0],
+    ['.doc-text', '> :not(.btn)', 'right', .08],
+    ['.mosaic', '> figure', 'zoom', .1],
+    ['.clinic', '.local', 'up', 0],
+    ['.s-grid', '> .step', 'up', .14],
+    ['.faq-list', '> details', 'up', .07],
+    ['.final .wrap > div:first-child', '> *', 'left', .12],
+    ['.final', '.form-card', 'right', .15],
+    ['body', '.cta-row', 'up', 0],
+    ['body', '.disclaimer', 'up', 0],
+    ['body', '.local', 'up', 0]
+  ];
+  var alvos = [];
+  grupos.forEach(function(g){
+    document.querySelectorAll(g[0]).forEach(function(pai){
+      var filhos = g[1].indexOf('>') === 0 ? pai.querySelectorAll(':scope ' + g[1]) : pai.querySelectorAll(g[1]);
+      [].forEach.call(filhos, function(el, i){
+        if(el.hasAttribute('data-anim')) return;
+        el.setAttribute('data-anim', g[2]);
+        if(g[3]) el.style.setProperty('--d', Math.min(i * g[3], .6) + 's');
+        alvos.push(el);
+      });
+    });
+  });
+
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(es){ mbar.classList.toggle('show', !es[0].isIntersecting); }, {threshold:0}).observe(hero);
     var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in'); io.unobserve(e.target);
+          // limpa o atraso depois de entrar, para não atrasar efeitos de hover
+          setTimeout(function(){ e.target.style.removeProperty('--d'); }, 1800);
+        }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+    alvos.forEach(function(el){ io.observe(el); });
+    // rede de segurança: nada fica escondido se a pessoa rolar muito rápido
+    var pend = 0;
+    function conferir(){
+      pend = 0;
+      var h = window.innerHeight;
+      alvos.forEach(function(el){
+        if(!el.classList.contains('in') && el.getBoundingClientRect().top < h){ el.classList.add('in'); io.unobserve(el); }
+      });
+    }
+    window.addEventListener('scroll', function(){ if(!pend) pend = setTimeout(conferir, 250); }, {passive:true});
+    window.addEventListener('load', conferir);
   } else {
-    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+    alvos.forEach(function(el){ el.classList.add('in'); });
   }
 })();
 </script>
