@@ -9,14 +9,14 @@
 <meta property="og:title" content="Implantar | Troque a dentadura por dentes fixos">
 <meta property="og:description" content="Prótese protocolo: dentes fixos. Volte a comer, falar e sorrir sem medo.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/capa-protocolo.jpg">
+<meta property="og:image" content="assets/img/hero-ba-azul.jpg">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/logo-icone.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/capa-protocolo.jpg">
+<link rel="preload" as="image" href="assets/img/hero-ba-azul.jpg">
 <script>document.documentElement.className+=" js"</script>
 
 <!--
@@ -125,7 +125,7 @@ section{position:relative}
   background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:58px 58px;
   -webkit-mask-image:linear-gradient(100deg,transparent 46%,#000 66%);mask-image:linear-gradient(100deg,transparent 46%,#000 66%)}
 .hero-deco{position:absolute;z-index:-1;left:-170px;top:50%;width:620px;height:660px;transform:translateY(-50%);background:url("assets/img/logo-icone.png") no-repeat center/contain;opacity:.07;pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:.98fr 1.02fr;gap:48px;align-items:center}
+.hero .wrap{position:relative;display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;align-items:center}
 .chip{display:inline-flex;align-items:center;gap:10px;max-width:100%;padding:10px 18px;border:1.5px solid rgba(62,82,114,.3);border-radius:999px;font-size:.86rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--azul);background:rgba(62,82,114,.06)}
 .chip i{width:7px;height:7px;border-radius:50%;background:var(--vinho-3);display:block;flex:none}
 .hero h1{color:var(--tinta);font-size:clamp(2.7rem,6vw,4.6rem);margin:24px 0 22px}
@@ -138,22 +138,25 @@ section{position:relative}
 .hero-checks svg{width:22px;height:22px;fill:var(--azul)}
 
 /* Colagem de fotos sobrepostas */
-.hero-visual{position:relative;width:100%;max-width:600px;justify-self:end}
-.collage{position:relative;width:100%;aspect-ratio:100/108}
-.collage .cc{position:absolute;margin:0;border-radius:22px;overflow:hidden;border:4px solid #fff;background:var(--azul-escuro);box-shadow:0 30px 60px -24px rgba(16,22,38,.75)}
+.hero-visual{position:relative;width:100%;max-width:650px;justify-self:end}
+.collage{position:relative;width:100%;aspect-ratio:100/92}
+.collage .cc{position:absolute;margin:0;border-radius:20px;overflow:hidden;border:4px solid #fff;background:var(--azul-escuro);box-shadow:0 26px 54px -22px rgba(16,22,38,.75)}
 .cc img{width:100%;height:100%;object-fit:cover;display:block}
-.cc-main{left:7%;top:0;width:50%;aspect-ratio:4/5;z-index:3}
-.cc-dr{right:0;top:8%;width:39%;aspect-ratio:3/4;z-index:2}
-.cc-ba{right:5%;bottom:0;width:45%;aspect-ratio:1/1;z-index:4}
-.cc-clin{left:0;bottom:4%;width:36%;aspect-ratio:3/4;z-index:2}
-.cc-clin img{object-position:40% 50%}
+/* posições em % da largura (left/width) e da altura (top) da colagem */
+.cc-a{left:0;top:0;width:40%;aspect-ratio:4/5;z-index:2}
+.cc-dr{left:37%;top:8.7%;width:32%;aspect-ratio:3/4;z-index:3}
+.cc-dr img{object-position:50% 30%}
+.cc-sorriso{left:70%;top:3.3%;width:30%;aspect-ratio:9/16;z-index:2}
+.cc-sorriso img{object-position:40% 30%}
+.cc-xadrez{left:2%;top:51%;width:52%;aspect-ratio:3/2;z-index:4}
+.cc-mulher{left:48%;top:62%;width:52%;aspect-ratio:3/2;z-index:3}
+.collage .cc-dr figcaption{top:10px;bottom:auto}
 .collage .cc .tag{font-size:.7rem;padding:6px 11px;top:10px}
 .collage .cc .t-antes{left:10px}
 .collage .cc .t-depois{left:calc(50% + 10px)}
 .collage .cc.stack .t-depois{left:10px;top:calc(50% + 10px)}
-.collage .cc-ba .tag{top:auto;bottom:10px}
 .cc figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.95);color:var(--azul);font-weight:800;font-size:.78rem;padding:6px 11px;border-radius:999px}
-.seal{position:absolute;z-index:5;left:54%;top:56%;width:22%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 20px 40px -14px rgba(16,22,38,.7),inset 0 0 0 1.5px rgba(62,82,114,.3);display:grid;place-items:center}
+.seal{position:absolute;z-index:6;left:55%;top:56%;width:19%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 20px 40px -14px rgba(16,22,38,.7),inset 0 0 0 1.5px rgba(62,82,114,.3);display:grid;place-items:center}
 .seal svg.seal-text{position:absolute;inset:0;width:100%;height:100%;animation:girar 26s linear infinite}
 .seal svg.seal-text text{font-family:var(--sans);font-weight:800;font-size:13px;fill:var(--azul);text-transform:uppercase}
 .seal img{width:46%;height:auto}
@@ -454,10 +457,10 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   .collage .cc .t-antes{left:7px}
   .collage .cc .t-depois{left:calc(50% + 7px)}
   .collage .cc.stack .t-depois{left:7px;top:calc(50% + 7px)}
-  .collage .cc-ba .tag{top:auto;bottom:7px}
   .cc figcaption{font-size:.66rem;padding:4px 8px;left:7px;bottom:7px}
-  .cc-main{width:54%;left:4%}
-  .seal{width:25%}
+  .collage .cc{border-width:3px;border-radius:14px}
+  .seal{width:22%}
+  .collage .cc-dr figcaption{top:7px}
   .seal svg.seal-text text{font-size:14px}
   .strip ul{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .strip li{font-size:1.02rem}
@@ -560,10 +563,11 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
     </div>
     <div class="hero-visual">
       <div class="collage">
-        <figure class="cc cc-clin" style="--d:.15s"><img src="assets/img/clinica-1.jpg" alt="Recepção da clínica Implantar em Lorena" width="1125" height="1500"><figcaption>Nossa clínica</figcaption></figure>
-        <figure class="cc cc-dr" style="--d:.3s"><img src="assets/img/hero-dr-paciente.jpg" alt="Dr. Gustavo com paciente na recepção da Implantar" width="780" height="1040"><figcaption>Dr. Gustavo</figcaption></figure>
-        <figure class="cc cc-main ba stack" style="--d:0s"><img src="assets/img/capa-protocolo.jpg" alt="Antes e depois: sorriso com poucos dentes e depois com dentes fixos" width="1080" height="1350" fetchpriority="high"><span class="tag t-antes">Antes</span><span class="tag t-depois">Depois</span></figure>
-        <figure class="cc cc-ba ba" style="--d:.45s"><img src="assets/img/hero-ba-2.jpg" alt="Antes e depois: paciente com dentes fixos de protocolo" width="900" height="900"><span class="tag t-antes">Antes</span><span class="tag t-depois">Depois</span></figure>
+        <figure class="cc cc-a ba" style="--d:0s"><img src="assets/img/hero-ba-azul.jpg" alt="Antes e depois: paciente com poucos dentes e depois com dentes fixos de protocolo" width="800" height="1000" fetchpriority="high"><span class="tag t-antes">Antes</span><span class="tag t-depois">Depois</span></figure>
+        <figure class="cc cc-dr" style="--d:.15s"><img src="assets/img/hero-dr-paciente.jpg" alt="Dr. Gustavo com paciente na recepção da Implantar" width="780" height="1040"><figcaption>Dr. Gustavo</figcaption></figure>
+        <figure class="cc cc-sorriso" style="--d:.3s"><img src="assets/img/hero-paciente-sorriso.jpg" alt="Paciente da Implantar sorrindo com dentes fixos" width="720" height="1280"><figcaption>Paciente real</figcaption></figure>
+        <figure class="cc cc-mulher" style="--d:.6s"><img src="assets/img/hero-ba-mulher.jpg" alt="Antes e depois de paciente da Implantar" width="960" height="640"></figure>
+        <figure class="cc cc-xadrez" style="--d:.45s"><img src="assets/img/hero-ba-xadrez.jpg" alt="Antes e depois de paciente da Implantar com prótese protocolo" width="960" height="640"></figure>
         <div class="seal" style="--d:.7s" aria-hidden="true">
           <svg class="seal-text" viewBox="0 0 200 200"><defs><path id="seal-c" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#seal-c" textLength="458" lengthAdjust="spacing">Implantar • Odontologia &amp; Saúde Integrada •</textPath></text></svg>
           <img src="assets/img/logo-icone.png" alt="">
