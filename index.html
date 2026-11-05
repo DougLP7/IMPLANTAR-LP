@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Google Tag Manager (código oficial do contêiner GTM-5W7PJG6K) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5W7PJG6K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<!-- Fim do Google Tag Manager -->
 <title>Implantar | Troque a dentadura por dentes fixos</title>
 <meta name="description" content="Chega de dentadura que cai e machuca. Prótese protocolo: dentes fixos na Implantar, em Lorena/SP. Fale pelo WhatsApp.">
 <meta name="theme-color" content="#26354D">
@@ -23,10 +31,7 @@
 
 <!--
   ============================================================
-  GOOGLE TAG MANAGER
-  Quando o gestor de tráfego enviar o ID do container (GTM-XXXXXXX),
-  basta colar o ID em CONFIG.GTM_ID (no final deste arquivo).
-  O GTM é carregado automaticamente.
+  GOOGLE TAG MANAGER: contêiner GTM-5W7PJG6K, instalado no topo do <head>.
   O evento de conversão é "lead_whatsapp" e só dispara depois que
   a pessoa preenche nome + WhatsApp válidos e envia o cadastro.
   ============================================================
@@ -961,9 +966,6 @@ var CONFIG = {
   // URL do Web App do Google Apps Script (termina em /exec)
   APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwIVvoO5esQjCfMBiBIsKdOuNJRKoTZdeLhqr5LyoRxBcxMU97AKCalZjtwY3OgwQjH/exec",
 
-  // ID do Google Tag Manager enviado pelo gestor de tráfego. Ex.: "GTM-ABC1234"
-  GTM_ID: "",
-
   // Nome da LP que aparece na coluna "Origem" da planilha
   LP_NOME: "LP Implantar",
 
@@ -971,15 +973,8 @@ var CONFIG = {
   MENSAGEM: "Vim pelo site da Implantar e quero saber sobre a prótese protocolo (dentes fixos)."
 };
 
-/* ---------- Google Tag Manager (carrega só se o ID for preenchido) ---------- */
+/* Google Tag Manager: instalado no <head> (GTM-5W7PJG6K) */
 window.dataLayer = window.dataLayer || [];
-(function(w,d,s,l,i){
-  if(!i || i.indexOf('GTM-') !== 0) return;
-  w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0], j=d.createElement(s);
-  j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i;
-  f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer',CONFIG.GTM_ID);
 
 (function(){
   'use strict';
